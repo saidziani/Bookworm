@@ -1,0 +1,222 @@
+[
+    {
+        "model": "bookworm.house",
+        "pk": 1,
+        "fields": {
+            "name": "Actes Sud",
+            "country": "Algeria"
+        }
+    },
+    {
+        "model": "bookworm.house",
+        "pk": 2,
+        "fields": {
+            "name": "Archimbaud Le Rocher",
+            "country": "France"
+        }
+    },
+    {
+        "model": "bookworm.house",
+        "pk": 3,
+        "fields": {
+            "name": "Arthaud",
+            "country": "Belgium"
+        }
+    },
+    {
+        "model": "bookworm.house",
+        "pk": 4,
+        "fields": {
+            "name": "Belin",
+            "country": "Netherlands"
+        }
+    },
+    {
+        "model": "bookworm.house",
+        "pk": 5,
+        "fields": {
+            "name": "Cairn",
+            "country": "Germany"
+        }
+    },
+
+
+    {
+        "model": "bookworm.category",
+        "pk": 1,
+        "fields": {
+            "name": "Literature"
+        }
+    },
+    {
+        "model": "bookworm.category",
+        "pk": 2,
+        "fields": {
+            "name": "Fiction"
+        }
+    },
+    {
+        "model": "bookworm.category",
+        "pk": 3,
+        "fields": {
+            "name": "Historical"
+        }
+    },
+    {
+        "model": "bookworm.category",
+        "pk": 4,
+        "fields": {
+            "name": "Philosophy"
+        }
+    },
+    {
+        "model": "bookworm.category",
+        "pk": 5,
+        "fields": {
+            "name": "Science"
+        }
+    },
+
+
+    {
+        "model": "bookworm.writer",
+        "pk": 1,
+        "fields": {
+            "fname": "Marie",
+            "lname": " d'Agoult",
+            "email": "marie@gmail.com",
+            "nationality": "France",
+            "birthday": "15-02-1835"
+        }
+    },
+    {
+        "model": "bookworm.writer",
+        "pk": 2,
+        "fields": {
+            "fname": "Almucs",
+            "lname": "de Castelnau",
+            "email": "almucs@gmail.com",
+            "nationality": "Brazil",
+            "birthday": "28-06-1902"
+        }
+    },
+    {
+        "model": "bookworm.writer",
+        "pk": 3,
+        "fields": {
+            "fname": "Christine",
+            "lname": "Angot",
+            "email": "christine@gmail.com",
+            "nationality": "Tunisia",
+            "birthday": "31-01-1899"
+        }
+    },
+    {
+        "model": "bookworm.writer",
+        "pk": 4,
+        "fields": {
+            "fname": "Virginie",
+            "lname": "Ancelot",
+            "email": "virgine@gmail.com",
+            "nationality": "Japan",
+            "birthday": "13-08-1945"
+        }
+    },
+    {
+        "model": "bookworm.writer",
+        "pk": 5,
+        "fields": {
+            "fname": "Hortense",
+            "lname": "Allart",
+            "email": "hortense@gmail.com",
+            "nationality": "New zeland",
+            "birthday": "12-04-1903"
+        }
+    },
+
+
+    {
+        "model": "movies.book",
+        "pk": 1,
+        "fields": {
+            "title": "In Search of Lost Time",
+            "year": 1942,
+            "isbn": "ISBN-8546985236542",
+            "category": 1,
+            "writer": 4,
+            "house": 3
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 2,
+        "fields": {
+            "title": "Don Quixote",
+            "year": 1960,
+            "isbn": "ISBN-5263569851254",
+            "category": 2,
+            "writer": 3,
+            "house": 5
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 3,
+        "fields": {
+            "title": "Ulysses",
+            "year": 1822,
+            "isbn": "ISBN-7485963214589",
+            "category": 1,
+            "writer": 2,
+            "house": 4
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 4,
+        "fields": {
+            "title": "War and Peace",
+            "year": 1980,
+            "isbn": "ISBN-2145878965232",
+            "category": 3,
+            "writer": 5,
+            "house": 3
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 5,
+        "fields": {
+            "title": "The Odyssey",
+            "year": 1960,
+            "isbn": "ISBN-9511598743685",
+            "category": 4,
+            "writer": 1,
+            "house": 1
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 6,
+        "fields": {
+            "title": "War and Peace",
+            "year": 1760,
+            "isbn": "ISBN-4258741369852",
+            "category": 5,
+            "writer": 2,
+            "house": 2
+        }
+    },
+    {
+        "model": "movies.book",
+        "pk": 7,
+        "fields": {
+            "title": "Hamlet",
+            "year": 1850,
+            "isbn": "ISBN-6325417896541",
+            "category": 4,
+            "writer": 3,
+            "house": 1
+        }
+    }
+]
