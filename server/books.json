@@ -136,7 +136,7 @@
 
 
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 1,
         "fields": {
             "title": "In Search of Lost Time",
@@ -148,7 +148,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 2,
         "fields": {
             "title": "Don Quixote",
@@ -160,7 +160,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 3,
         "fields": {
             "title": "Ulysses",
@@ -172,7 +172,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 4,
         "fields": {
             "title": "War and Peace",
@@ -184,7 +184,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 5,
         "fields": {
             "title": "The Odyssey",
@@ -196,7 +196,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 6,
         "fields": {
             "title": "War and Peace",
@@ -208,7 +208,7 @@
         }
     },
     {
-        "model": "movies.book",
+        "model": "bookworm.book",
         "pk": 7,
         "fields": {
             "title": "Hamlet",
