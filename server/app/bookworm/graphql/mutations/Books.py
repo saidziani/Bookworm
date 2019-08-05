@@ -1,6 +1,6 @@
 import graphene
 from graphene_django.types import DjangoObjectType, ObjectType
-from app.bookworm.models import Book
+from app.bookworm.models import Book, House, Writer, Category
 from app.bookworm.graphql.input_types import BookInput
 from app.bookworm.graphql.types import BookType
 
@@ -19,9 +19,12 @@ class CreateBook(graphene.Mutation):
         book_instance = Book(title=input.title)
         book_instance = Book(year=input.year)
         book_instance = Book(isbn=input.isbn)
-        book_instance = Book(category=input.category)
-        book_instance = Book(writer=input.writer)
-        book_instance = Book(house=input.house)
+        category = Category.objects.get(pk=input.category)
+        book_instance = Book(category=category)
+        writer = Writer.objects.get(pk=input.writer)
+        book_instance = Book(writer=writer)
+        house = House.objects.get(pk=input.house)
+        book_instance = Book(house=house)
         book_instance.save()
         return CreateBook(ok=ok, book=book_instance)
 
