@@ -1,7 +1,7 @@
 import graphene
 from graphene_django.types import DjangoObjectType, ObjectType
-from app.bookworm.models import Book, House, Category, Writer
-from app.bookworm.graphql.types import BookType, HouseType, CategoryType, WriterType
+from app.bookworm.models import Book, House, Category, Writer, User
+from app.bookworm.graphql.types import BookType, HouseType, CategoryType, WriterType, UserType
 
 # Create a Query type
 class Query(ObjectType):
@@ -56,3 +56,16 @@ class Query(ObjectType):
 
     def resolve_writers(self, info, **kwargs):
         return Writer.objects.all()
+
+    # Users
+    user = graphene.Field(UserType, id=graphene.Int())
+    users = graphene.List(UserType)
+
+    def resolve_user(self, info, **kwargs):
+        id = kwargs.get('id')
+        if id is not None:
+            return User.objects.get(pk=id)
+        return None
+
+    def resolve_users(self, info, **kwargs):
+        return User.objects.all()
