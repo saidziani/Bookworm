@@ -43,3 +43,20 @@ class UpdateWriter(graphene.Mutation):
             writer_instance.save()
             return UpdateWriter(ok=ok, writer=writer_instance)
         return UpdateWriter(ok=ok, writer=None)
+
+
+class DeleteWriter(graphene.Mutation):
+    class Arguments:
+        id = graphene.Int(required=True)
+
+    ok = graphene.Boolean()
+
+    @staticmethod
+    def mutate(root, info, id, input=None):
+        ok = False
+        writer_instance = Writer.objects.get(pk=id)
+        if writer_instance:
+            ok = True
+            Writer.objects.get(pk=id).delete()
+            return DeleteWriter(ok=ok)
+        return DeleteWriter(ok=ok)

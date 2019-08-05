@@ -40,3 +40,20 @@ class UpdateHouse(graphene.Mutation):
             house_instance.save()
             return UpdateHouse(ok=ok, house=house_instance)
         return UpdateHouse(ok=ok, house=None)
+
+
+class DeleteHouse(graphene.Mutation):
+    class Arguments:
+        id = graphene.Int(required=True)
+
+    ok = graphene.Boolean()
+
+    @staticmethod
+    def mutate(root, info, id, input=None):
+        ok = False
+        house_instance = House.objects.get(pk=id)
+        if house_instance:
+            ok = True
+            House.objects.get(pk=id).delete()
+            return DeleteHouse(ok=ok)
+        return DeleteHouse(ok=ok)

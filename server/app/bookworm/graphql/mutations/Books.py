@@ -51,8 +51,25 @@ class UpdateBook(graphene.Mutation):
             book_instance.year = input.year
             book_instance.isbn = input.isbn
             book_instance.category = input.category
-            # book_instance.writer = input.writer
-            # book_instance.house = input.house
+            book_instance.writer = input.writer
+            book_instance.house = input.house
             book_instance.save()
             return UpdateBook(ok=ok, book=book_instance)
         return UpdateBook(ok=ok, book=None)
+
+
+class DeleteBook(graphene.Mutation):
+    class Arguments:
+        id = graphene.Int(required=True)
+
+    ok = graphene.Boolean()
+
+    @staticmethod
+    def mutate(root, info, id, input=None):
+        ok = False
+        book_instance = Book.objects.get(pk=id)
+        if book_instance:
+            ok = True
+            Book.objects.get(pk=id).delete()
+            return DeleteBook(ok=ok)
+        return DeleteBook(ok=ok)
