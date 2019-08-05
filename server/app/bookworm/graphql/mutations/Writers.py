@@ -16,11 +16,7 @@ class CreateWriter(graphene.Mutation):
     @staticmethod
     def mutate(root, info, input=None):
         ok = True
-        writer_instance = Writer(fname=input.fname)
-        writer_instance = Writer(lname=input.lname)
-        writer_instance = Writer(email=input.email)
-        writer_instance = Writer(nationality=input.nationality)
-        writer_instance = Writer(birthday=input.birthday)
+        writer_instance = Writer(fname=input.fname, lname=input.lname, email=input.email, nationality=input.nationality, birthday=input.birthday)
         writer_instance.save()
         return CreateWriter(ok=ok, writer=writer_instance)
 

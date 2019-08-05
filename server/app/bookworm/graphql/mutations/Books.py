@@ -16,15 +16,19 @@ class CreateBook(graphene.Mutation):
     @staticmethod
     def mutate(root, info, input=None):
         ok = True
-        book_instance = Book(title=input.title)
-        book_instance = Book(year=input.year)
-        book_instance = Book(isbn=input.isbn)
-        category = Category.objects.get(pk=input.category)
-        book_instance = Book(category=category)
-        writer = Writer.objects.get(pk=input.writer)
-        book_instance = Book(writer=writer)
-        house = House.objects.get(pk=input.house)
-        book_instance = Book(house=house)
+        category = Category.objects.get(pk=input.category.id)
+        house = House.objects.get(pk=input.house.id)
+        writer = Writer.objects.get(pk=input.writer.id)
+
+        book_instance = Book(
+            title=input.title, 
+            year=input.year, 
+            isbn=input.isbn, 
+            category=category, 
+            house=house, 
+            writer=writer
+        )
+
         book_instance.save()
         return CreateBook(ok=ok, book=book_instance)
 
@@ -47,8 +51,8 @@ class UpdateBook(graphene.Mutation):
             book_instance.year = input.year
             book_instance.isbn = input.isbn
             book_instance.category = input.category
-            book_instance.writer = input.writer
-            book_instance.house = input.house
+            # book_instance.writer = input.writer
+            # book_instance.house = input.house
             book_instance.save()
             return UpdateBook(ok=ok, book=book_instance)
         return UpdateBook(ok=ok, book=None)

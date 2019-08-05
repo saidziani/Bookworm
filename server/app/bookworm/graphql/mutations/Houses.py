@@ -16,8 +16,7 @@ class CreateHouse(graphene.Mutation):
     @staticmethod
     def mutate(root, info, input=None):
         ok = True
-        house_instance = House(name=input.name)
-        house_instance = House(country=input.country)
+        house_instance = House(name=input.name, country=input.country)
         house_instance.save()
         return CreateHouse(ok=ok, house=house_instance)
 
