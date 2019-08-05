@@ -53,3 +53,16 @@ class Book(models.Model):
 
     class Meta:
         ordering = ('title',)
+
+
+# Users model
+class User(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    admin = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        ordering = ('username',)
