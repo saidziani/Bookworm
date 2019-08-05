@@ -4,6 +4,7 @@ from .Books import CreateBook, UpdateBook, DeleteBook
 from .Categories import CreateCategory, UpdateCategory, DeleteCategory
 from .Writers import CreateWriter, UpdateWriter, DeleteWriter
 from .Houses import CreateHouse, UpdateHouse, DeleteHouse
+from .Users import CreateUser, UpdateUser, DeleteUser
 
 
 # Create a Mutation type
@@ -23,4 +24,8 @@ class Mutation(graphene.ObjectType):
     create_house = CreateHouse.Field()
     update_house = UpdateHouse.Field()
     delete_house = DeleteHouse.Field()
+
+    create_user = CreateUser.Field()
+    update_user = UpdateUser.Field()
+    delete_user = DeleteUser.Field()
 
