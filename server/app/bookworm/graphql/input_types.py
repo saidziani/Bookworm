@@ -23,7 +23,7 @@ class WriterInput(graphene.InputObjectType):
 class BookInput(graphene.InputObjectType):
     id = graphene.ID()
     title = graphene.String()
-    year = graphene.Int()
+    year = graphene.String()
     isbn = graphene.String()
     category = graphene.Field(CategoryInput)
     writer = graphene.Field(WriterInput)
