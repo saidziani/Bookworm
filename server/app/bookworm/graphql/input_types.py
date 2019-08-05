@@ -28,3 +28,10 @@ class BookInput(graphene.InputObjectType):
     category = graphene.Field(CategoryInput)
     writer = graphene.Field(WriterInput)
     house = graphene.Field(HouseInput)
+
+
+class UserInput(graphene.InputObjectType):
+    id = graphene.ID()
+    username = graphene.String()
+    email = graphene.String()
+    admin = graphene.Boolean()
