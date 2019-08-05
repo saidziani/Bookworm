@@ -39,3 +39,20 @@ class UpdateCategory(graphene.Mutation):
             category_instance.save()
             return UpdateCategory(ok=ok, category=category_instance)
         return UpdateCategory(ok=ok, category=None)
+
+
+class DeleteCategory(graphene.Mutation):
+    class Arguments:
+        id = graphene.Int(required=True)
+
+    ok = graphene.Boolean()
+
+    @staticmethod
+    def mutate(root, info, id, input=None):
+        ok = False
+        category_instance = Category.objects.get(pk=id)
+        if category_instance:
+            ok = True
+            Category.objects.get(pk=id).delete()
+            return DeleteCategory(ok=ok)
+        return DeleteCategory(ok=ok)
